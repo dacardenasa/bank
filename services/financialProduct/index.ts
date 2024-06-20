@@ -20,7 +20,6 @@ export const financialProductAPI = {
   updateFinanciaProduct: async (
     product: FinancialProductAPI
   ): Promise<FinancialProduct> => {
-    console.log({ product })
     const response = await BankAPI.put("/bp/products", {
       ...product
     });
