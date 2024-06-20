@@ -84,6 +84,6 @@ export const useHome = () => {
     handlePressProductCard,
     handleSearch,
     handlePressAddProduct,
-    renderProductCard,
+    renderProductCard
   };
 };

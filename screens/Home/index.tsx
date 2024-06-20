@@ -44,7 +44,11 @@ export const Home = () => {
               <EmptyList description="No hay productos financieros registrados" />
             )
           }
-          ListFooterComponent={isPending ? <ProductCardSkeletonGroup skeletonsNumber={5} /> : null}
+          ListFooterComponent={
+            isPending && !products.length ? (
+              <ProductCardSkeletonGroup skeletonsNumber={5} />
+            ) : null
+          }
         />
       </View>
       <View
