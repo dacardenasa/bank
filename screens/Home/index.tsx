@@ -5,9 +5,9 @@ import {
   Button,
   EmptyList,
   ItemSeparatorComponent,
-  Loader,
+  ProductCardSkeletonGroup,
   Separator,
-  TextField,
+  TextField
 } from "@/components";
 
 import { useHome } from "./useHome";
@@ -21,10 +21,6 @@ export const Home = () => {
     handleSearch,
     renderProductCard
   } = useHome();
-
-  if (isPending) {
-    return <Loader />;
-  }
 
   return (
     <View style={styles.container} testID="Home">
@@ -43,9 +39,12 @@ export const Home = () => {
           renderItem={renderProductCard}
           keyExtractor={(item) => item.id}
           ItemSeparatorComponent={ItemSeparatorComponent}
-          ListEmptyComponent={() => (
-            <EmptyList description="No hay productos financieros registrados" />
-          )}
+          ListEmptyComponent={
+            isPending ? null : (
+              <EmptyList description="No hay productos financieros registrados" />
+            )
+          }
+          ListFooterComponent={isPending ? <ProductCardSkeletonGroup skeletonsNumber={5} /> : null}
         />
       </View>
       <View

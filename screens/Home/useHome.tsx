@@ -7,7 +7,7 @@ import Toast from "react-native-toast-message";
 import { FinancialProduct, HomeProps } from "@/interfaces";
 import { financialProductAPI } from "@/services";
 import { useRefetchOnFocus } from "@/hooks";
-import { ProductCard } from "@/components";
+import { ProductCard, ProductCardSkeleton } from "@/components";
 import {
   financialProductDetailRoute,
   financialProductFormRoute
@@ -57,20 +57,23 @@ export const useHome = () => {
     []
   );
 
-  const handleSearch = useCallback((value: string) => {
-    if (!data?.length) return;
-    if (!value.length) {
-      setSearch("");
-      setProducts(data ?? []);
-      return;
-    }
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) =>
-        product.name.toLowerCase().includes(value.toLowerCase())
-      )
-    );
-    setSearch(value);
-  }, [data]);
+  const handleSearch = useCallback(
+    (value: string) => {
+      if (!data?.length) return;
+      if (!value.length) {
+        setSearch("");
+        setProducts(data ?? []);
+        return;
+      }
+      setProducts((prevProducts) =>
+        prevProducts.filter((product) =>
+          product.name.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+      setSearch(value);
+    },
+    [data]
+  );
 
   useRefetchOnFocus(mutate, false, true);
 
@@ -80,7 +83,7 @@ export const useHome = () => {
     search,
     handlePressProductCard,
     handleSearch,
+    handlePressAddProduct,
     renderProductCard,
-    handlePressAddProduct
   };
 };
