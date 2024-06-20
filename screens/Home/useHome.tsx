@@ -58,18 +58,19 @@ export const useHome = () => {
   );
 
   const handleSearch = useCallback((value: string) => {
-    if (!products.length) return;
+    if (!data?.length) return;
     if (!value.length) {
+      setSearch("");
       setProducts(data ?? []);
       return;
     }
-    setSearch(value);
     setProducts((prevProducts) =>
       prevProducts.filter((product) =>
         product.name.toLowerCase().includes(value.toLowerCase())
       )
     );
-  }, []);
+    setSearch(value);
+  }, [data]);
 
   useRefetchOnFocus(mutate, false, true);
 

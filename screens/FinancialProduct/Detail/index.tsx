@@ -46,7 +46,7 @@ export const FinancialProductDetail = ({
           <View style={styles.modalHeader}>
             <Text
               style={styles.modalLabel}
-            >{`Estas seguro de eliminar el producto ${payload.name}`}</Text>
+            >{`¿Estas seguro de eliminar el producto ${payload.name}?`}</Text>
           </View>
           <View style={styles.modalButtonsBox}>
             <Button
