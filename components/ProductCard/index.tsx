@@ -10,7 +10,7 @@ type ProductCardProps = {
 
 const _ProductCard = ({ id, name, handlePress }: ProductCardProps) => {
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity testID="productCard" onPress={handlePress}>
       <View style={styles.container}>
         <View>
           <Text style={styles.productName}>{name}</Text>

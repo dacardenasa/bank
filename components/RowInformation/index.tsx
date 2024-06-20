@@ -14,7 +14,7 @@ const _RowInformation = ({
 }: RowInformationProps) => {
   if (type === "text") {
     return (
-      <View style={styles.container}>
+      <View testID="rowInfoText" style={styles.container}>
         <View style={styles.row}>
           <View style={styles.halfContentBox}>
             <Text style={styles.rowLabel}>{label}</Text>
@@ -28,7 +28,7 @@ const _RowInformation = ({
   }
 
   return (
-    <View style={styles.container}>
+    <View testID="rowInfoImage" style={styles.container}>
       <View style={{ ...styles.row, flexDirection: "column" }}>
         <View style={{ ...styles.halfContentBox, width: "100%" }}>
           <Text style={styles.rowLabel}>{label}</Text>

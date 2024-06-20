@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const _ItemSeparatorComponent = () => <View style={styles.container} />;
+const _ItemSeparatorComponent = () => <View testID="itemSeparator" style={styles.container} />;
 
 export const ItemSeparatorComponent = React.memo(_ItemSeparatorComponent);
 

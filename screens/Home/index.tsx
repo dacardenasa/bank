@@ -27,7 +27,7 @@ export const Home = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="Home">
       <Separator height={35} />
       <TextField
         placeholder="Search..."
