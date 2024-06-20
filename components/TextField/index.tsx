@@ -8,6 +8,7 @@ type TextFieldProps = TextInputProps & {
 const _TextField = ({ hasError = false, ...rest }: TextFieldProps) => {
   return (
     <TextInput
+      testID="textfield"
       style={{ ...styles.textInput, ...(hasError ? styles.errorField : {}) }}
       {...rest}
     />

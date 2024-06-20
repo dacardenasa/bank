@@ -7,7 +7,7 @@ type ProductHeaderProps = {
 
 const _ProductHeader = ({ id }: ProductHeaderProps) => {
   return (
-    <View style={styles.headerBox}>
+    <View testID="productHeader" style={styles.headerBox}>
       <Text style={styles.authorIdLabel}>{`ID: ${id}`}</Text>
       <Text style={styles.extraInfoLabel}>Información extra</Text>
     </View>

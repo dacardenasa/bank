@@ -7,7 +7,7 @@ type SeparatorProps = {
 
 const _Separator = ({ height = 8 }: SeparatorProps) => {
   return (
-    <View style={{ ...styles, height }} />
+    <View testID="separator" style={{ ...styles, height }} />
   )
 }
 
